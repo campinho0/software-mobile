@@ -3,6 +3,7 @@ import { SafeAreaView, Button, View, Text, FlatList, Image, StyleSheet, ScrollVi
 import SearchVehicles from './SearchVehicles';
 import Contact from './Contact';
 import Vehicle from './Vehicle';
+import firebase from 'firebase/compat/app';
 
 const initialVehicles = [
   {
@@ -42,7 +43,7 @@ const Catalog = ({ navigation }) => {
       const priceMatches = vehicle.price == filter.price;
       return  priceMatches || brandMatches ;
     });
-    console.log(filtered)
+    console.log(firebase)
     setFilteredVehicles(filtered);
   };
 
