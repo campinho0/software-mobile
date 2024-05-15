@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { SafeAreaView, Button, View, Text, FlatList, Image, StyleSheet, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, FlatList, Image, StyleSheet, ScrollView } from 'react-native';
+import { Button } from 'react-native-paper';
 import SearchVehicles from './SearchVehicles';
 import Contact from './Contact';
 import Vehicle from './Vehicle';
@@ -56,7 +57,7 @@ const Catalog = ({ navigation }) => {
   );
 
   return (
-    <View style={styles.container}>
+    <View>
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.componentContainer}>
@@ -73,12 +74,15 @@ const Catalog = ({ navigation }) => {
             />
         ))}
           <Button
-            title="schedule a test drive"
-            onPress={() => navigation.navigate('TestDriveRequest')}
-          />
+            style={styles.button}
+            labelStyle={styles.buttonLabel}
+            mode='contained'
+            onPress={() => navigation.navigate('Test Drive Request')}>
+            Programa un test drive
+          </Button>
         </View >
-        <Contact/>
       </View> 
+      <Contact/>
     </ScrollView>
     </View>
   );

@@ -18,23 +18,31 @@ const Contact = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
-    paddingHorizontal: 20,
-    paddingTop: 20,
+    width: 430,
+    marginTop: 50,
+    justifyContent: 'center',
+    backgroundColor: '#5A5C5E',
+    padding: 30
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    textAlign: 'center',
+    color: 'white'
   },
   subtitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginTop: 10,
+    textAlign: 'center',
+    color: 'white'
   },
   text: {
     fontSize: 16,
     marginBottom: 10,
+    textAlign: 'center',
+    color: 'white'
   },
 });
 

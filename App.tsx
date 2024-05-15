@@ -8,7 +8,6 @@ import Catalog from './src/components/Catalog';
 import Contact from './src/components/Contact';
 import TestDriveRequest from './src/components/TestDriveRequest';
 import Main from './src/components/Main';
-import { Text } from 'react-native-paper';
 import OffersPromotions from './src/components/OffersPromotions';
 import QuotationRequest from './src/components/QuotationRequest';
 import ServiceAppointment from './src/components/ServiceAppointment';
@@ -27,7 +26,7 @@ function app() {
         <CatalogState>
           <NavigationContainer>
             <Drawer.Navigator>
-              <Drawer.Screen name="Main" component={Main} options={{}}/>
+              <Drawer.Screen name="Main" component={Main}/>
               <Drawer.Screen name="Catalog" component={Catalog} />
               <Drawer.Screen name="Test Drive Request" component={TestDriveRequest} />
               <Drawer.Screen name="Offers Promotions" component={OffersPromotions} />
