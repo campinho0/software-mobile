@@ -4,10 +4,10 @@ import { View, Text, StyleSheet } from 'react-native';
 const Contact = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Contact Us</Text>
-      <Text style={styles.subtitle}>Address:</Text>
+      <Text style={styles.title}>Contactanos</Text>
+      <Text style={styles.subtitle}>Dirección:</Text>
       <Text style={styles.text}>cll 123 cra 8 # 40</Text>
-      <Text style={styles.subtitle}>Phone:</Text>
+      <Text style={styles.subtitle}>Telefono:</Text>
       <Text style={styles.text}>456-7890</Text>
       <Text style={styles.subtitle}>Email:</Text>
       <Text style={styles.text}>concesionario@correo.com</Text>

@@ -53,7 +53,7 @@ const SearchVehicles = ({ onSearch }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
+    margin: 10,
   },
   title: {
     fontSize: 20,
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
+    width: 300,
     borderColor: 'gray',
     color: 'black',
     borderWidth: 1,

@@ -15,7 +15,7 @@ import ServiceHistory from './src/components/ServiceHistory';
 
 import FirebaseState from './context/firebase/firebaseState';
 import CatalogState from './context/catalog/catalogState';
-import { NativeBaseProvider } from 'native-base';
+import { NativeBaseProvider, stylingProps } from 'native-base';
 
 const Drawer = createDrawerNavigator();
 
@@ -26,7 +26,7 @@ function app() {
         <CatalogState>
           <NavigationContainer>
             <Drawer.Navigator>
-              <Drawer.Screen name="Main" component={Main}/>
+              <Drawer.Screen name="Home" component={Main}/>
               <Drawer.Screen name="Catalog" component={Catalog} />
               <Drawer.Screen name="Test Drive Request" component={TestDriveRequest} />
               <Drawer.Screen name="Offers Promotions" component={OffersPromotions} />

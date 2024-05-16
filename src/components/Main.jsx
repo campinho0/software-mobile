@@ -7,14 +7,15 @@ import Contact from './Contact';
 const Main = ({ navigation }) => {
   return (
     <View>
-      <ScrollView>
-        <View style={styles.container}>
+      <ScrollView >
+        <View style={styles.scrollView}>
+      <View style={styles.container}>
           <Image source={require('../resources/logo.png')} style={styles.logo} />
-        </View>
+          </View>
         <View style={styles.containerSlogan}>
           <Text style={styles.tittle}>Encuentra tu camino con nosotros: donde cada viaje comienza con el auto perfecto.</Text>
         </View>
-        <View>
+        <View style={styles.container}>
           <View style={styles.container}>
             <Image source={require('../resources/blue_car.png')} style={styles.blueCar} />
           </View>
@@ -41,33 +42,39 @@ const Main = ({ navigation }) => {
           </Button>
         </View>
         <Contact/>
+        </View>
       </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 400
+    width: 300
   },
   containerSlogan: {
     flex: 1,
-    height: 400,
+    height: 300,
     width: 250,
     justifyContent: 'center',
-    margin: 80,
-    marginTop: 1,
+    margin: 60,
     backgroundColor: '#5A5C5E',
     borderRadius: 30
   },
   logo: {
-    width: 300,
-    height: 300,
-    backgroundColor: 'white'
+    maxWidth : 250,
+    height: 180,
+    margin: 10,
   },
   blueCar: {
     maxWidth : 400,
@@ -77,7 +84,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: '#0F6FC4',
     margin: 10,
-    padding: 10
+    padding: 10,
+    width:250
   },
   buttonLabel: {
     fontSize: 20
