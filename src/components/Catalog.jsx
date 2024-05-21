@@ -32,7 +32,7 @@ const Catalog = ({ navigation }) => {
     console.log(firebase)
     setFilteredVehicles(filtered);
   };
-
+  
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Image source={{ uri: item.urlImagen }} style={styles.image} />

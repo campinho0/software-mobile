@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-native';
 
-
-const TestDriveRequest = ({ navigation }) => {
+const TestDriveRequest = () => {
   const [name, setName] = useState('');
   const [idNumber, setIdNumber] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -16,7 +15,6 @@ const TestDriveRequest = ({ navigation }) => {
   };
 
   return (
-    <ScrollView>
         <View style={styles.container}>
         <Text style={styles.title}>Test Drive Request</Text>
         <TextInput
@@ -45,9 +43,11 @@ const TestDriveRequest = ({ navigation }) => {
             value={date}
             onChangeText={text => setDate(text)}
         />
-        <Button title="schedule" onPress={() => handleSubmit} />
+        <Button title="Test Drive" onPress={handleSubmit} />
+        <Button
+        props
+        dark={{height:80, justifyContent:'center'}}></Button>
         </View>
-    </ScrollView>
   );
 };
 
