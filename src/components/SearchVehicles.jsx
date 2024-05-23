@@ -5,13 +5,11 @@ const SearchVehicles = ({ onSearch }) => {
   const [priceInput, setPriceInput] = useState(0);
   const [brandInput, setBrandInput] = useState("");
   const [modelInput, setModelInput] = useState("");
-  const [yearInput, setYearInput] = useState("");
 
   const searchVehicles = () => {
     const filter = {
       brand: brandInput.trim(),
       model: modelInput.trim(),
-      year: yearInput.trim(),
       price: priceInput,
     };
     onSearch(filter);
@@ -24,26 +22,19 @@ const SearchVehicles = ({ onSearch }) => {
         onChangeText={(value) => setBrandInput(value)}
         value={brandInput}
         style={styles.input}
-        placeholder="Brand"
+        placeholder="Marca"
       />
       <TextInput
         onChangeText={(value) => setModelInput(value)}
         value={modelInput}
         style={styles.input}
-        placeholder="Model"
-      />
-      <TextInput
-        onChangeText={(value) => setYearInput(value)}
-        value={yearInput}
-        style={styles.input}
-        placeholder="Year"
-        keyboardType="numeric"
+        placeholder="Modelo"
       />
       <TextInput
         onChangeText={(value) => setPriceInput(Number(value))}
         value={priceInput}
         style={styles.input}
-        placeholder="Price"
+        placeholder="Precio"
         keyboardType="numeric"
       />
       <Button title="Search" onPress={searchVehicles} />

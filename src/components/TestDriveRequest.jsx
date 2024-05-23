@@ -43,10 +43,9 @@ const TestDriveRequest = () => {
             value={date}
             onChangeText={text => setDate(text)}
         />
-        <Button title="Test Drive" onPress={handleSubmit} />
-        <Button
-        props
-        dark={{height:80, justifyContent:'center'}}></Button>
+        <Button title="Test Drive" onPress={handleSubmit} props
+        dark={{height:80, justifyContent:'center'}}/>
+
         </View>
   );
 };

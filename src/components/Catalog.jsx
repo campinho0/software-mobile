@@ -29,7 +29,6 @@ const Catalog = ({ navigation }) => {
       const priceMatches = vehicle.price == filter.price;
       return  priceMatches || brandMatches ;
     });
-    console.log(firebase)
     setFilteredVehicles(filtered);
   };
   
