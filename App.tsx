@@ -30,7 +30,6 @@ function app() {
               <Drawer.Screen name="Home" component={Main}/>
               <Drawer.Screen name="Catalog" component={Catalog} />
               <Drawer.Screen name="Test Drive Request" component={TestDriveRequest} />
-              <Drawer.Screen name="Offers Promotions" component={OffersPromotions} />
               <Drawer.Screen name="Quotation Request" component={QuotationRequest} />
               <Drawer.Screen name="Service Appointment" component={ServiceAppointment} />
               <Drawer.Screen name="Service History" component={ServiceHistory} />   

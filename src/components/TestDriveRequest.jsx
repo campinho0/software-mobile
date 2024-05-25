@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TextInput, StyleSheet, ScrollView, Alert } from 'react-native';
 import { Button } from 'react-native-paper';
 
 
@@ -15,6 +15,28 @@ const TestDriveRequest = () => {
     console.log('Número de celular:', phoneNumber);
     console.log('Fecha de cita:', date);
   };
+  const showRequest = () =>
+    Alert.alert(
+      'Confirmacion de solicitud',
+      'Nombre: ' + name + '\n'+
+      'Número de identificación: ' + idNumber + '\n'+
+      'Número de celular: ' + phoneNumber + '\n' +
+      'Fecha de cita: '+ date + '\n',
+      [
+        {
+          text: 'Confirmar',
+          onPress: () => Alert.alert('Test Drive agendado'),
+          style: 'ok',
+        },
+      ],
+      {
+        cancelable: true,
+        onDismiss: () =>
+          Alert.alert(
+            '¿Quiere cancelar su solicitud?',
+          ),
+      },
+    );
 
   return (
     <ScrollView>
@@ -50,7 +72,7 @@ const TestDriveRequest = () => {
               style={styles.button}
               labelStyle={styles.buttonLabel}
               mode='contained'
-              onPress={handleSubmit}>
+              onPress={showRequest}>
               Programa un test drive
             </Button>
       </View>
