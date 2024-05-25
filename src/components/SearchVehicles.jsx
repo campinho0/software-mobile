@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { Button } from 'react-native-paper';
 
 const SearchVehicles = ({ onSearch }) => {
   const [priceInput, setPriceInput] = useState(0);
   const [brandInput, setBrandInput] = useState("");
   const [modelInput, setModelInput] = useState("");
-  const [yearInput, setYearInput] = useState("");
 
   const searchVehicles = () => {
     const filter = {
       brand: brandInput.trim(),
       model: modelInput.trim(),
-      year: yearInput.trim(),
       price: priceInput,
     };
     onSearch(filter);
@@ -19,41 +18,42 @@ const SearchVehicles = ({ onSearch }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Search Vehicles</Text>
+      <Text style={styles.title}>Buscar vehiculos</Text>
       <TextInput
         onChangeText={(value) => setBrandInput(value)}
         value={brandInput}
         style={styles.input}
-        placeholder="Brand"
+        placeholder="Marca"
       />
       <TextInput
         onChangeText={(value) => setModelInput(value)}
         value={modelInput}
         style={styles.input}
-        placeholder="Model"
-      />
-      <TextInput
-        onChangeText={(value) => setYearInput(value)}
-        value={yearInput}
-        style={styles.input}
-        placeholder="Year"
-        keyboardType="numeric"
+        placeholder="Modelo"
       />
       <TextInput
         onChangeText={(value) => setPriceInput(Number(value))}
         value={priceInput}
         style={styles.input}
-        placeholder="Price"
+        placeholder="Precio"
         keyboardType="numeric"
       />
-      <Button title="Search" onPress={searchVehicles} />
+      <Button
+              style={styles.button}
+              labelStyle={styles.buttonLabel}
+              mode='contained'
+              onPress={searchVehicles}>
+              Buscar
+            </Button>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   title: {
     fontSize: 20,
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
+    width: 300,
     borderColor: 'gray',
     color: 'black',
     borderWidth: 1,
@@ -71,7 +72,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: '#C8CFD8',
   },
-  
+  button: {
+    borderRadius: 50,
+    backgroundColor: '#0F6FC4',
+    margin: 10,
+    padding: 10,
+    width:250
+  },
+  buttonLabel: {
+    fontSize: 20
+  },
 });
 
 export default SearchVehicles;

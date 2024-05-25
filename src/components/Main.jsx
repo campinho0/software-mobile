@@ -2,38 +2,46 @@ import React from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Button } from 'react-native-paper';
+import Contact from './Contact';
 
 const Main = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <ScrollView>
-        <View style={styles.container}>
-          <Image source={require('../resources/logo.png')} style={styles.image} />
-        </View>
+    <View>
+      <ScrollView >
+        <View style={styles.scrollView}>
+      <View style={styles.container}>
+          <Image source={require('../resources/logo.png')} style={styles.logo} />
+          </View>
         <View style={styles.containerSlogan}>
-          <Text style={styles.tittle}>Eslogan</Text>
+          <Text style={styles.tittle}>Encuentra tu camino con nosotros: donde cada viaje comienza con el auto perfecto.</Text>
         </View>
-        <View>
-          
-            <Button
-              style={styles.button}
-              labelStyle= {styles.buttonLabel}
-              mode='contained'
-              onPress={() => navigation.navigate('Catalog')}>
-              Ver vehiculos
-            </Button>
-            <Button
-              style={styles.button}
-              mode='contained'
-              onPress={() => navigation.navigate('Catalog')}>
-              Test drive
-            </Button>
-            <Button
-              style={styles.button}
-              mode='contained'
-              onPress={() => navigation.navigate('Catalog')}>
-              Servicio mecanico
-            </Button>
+        <View style={styles.container}>
+          <View style={styles.container}>
+            <Image source={require('../resources/blue_car.png')} style={styles.blueCar} />
+          </View>
+          <Button
+            style={styles.button}
+            labelStyle={styles.buttonLabel}
+            mode='contained'
+            onPress={() => navigation.navigate('Catalog')}>
+            Ver vehiculos
+          </Button>
+          <Button
+            style={styles.button}
+            labelStyle={styles.buttonLabel}
+            mode='contained'
+            onPress={() => navigation.navigate('Test Drive Request')}>
+            Test drive
+          </Button>
+          <Button
+            style={styles.button}
+            labelStyle={styles.buttonLabel}
+            mode='contained'
+            onPress={() => navigation.navigate('Service Appointment')}>
+            Servicio mecanico
+          </Button>
+        </View>
+        <Contact/>
         </View>
       </ScrollView>
     </View>
@@ -41,33 +49,51 @@ const Main = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignItems: 'center',
-    width:500
+    width: 300
   },
   containerSlogan: {
-    height:500
-  },
-  image: {
-    width: 300,
+    flex: 1,
     height: 300,
-    backgroundColor: 'white'
+    width: 250,
+    justifyContent: 'center',
+    margin: 60,
+    backgroundColor: '#5A5C5E',
+    borderRadius: 30
+  },
+  logo: {
+    maxWidth : 250,
+    height: 180,
+    margin: 10,
+  },
+  blueCar: {
+    maxWidth : 400,
+    height: 200
   },
   button: {
     borderRadius: 50,
-    backgroundColor: 'black',
+    backgroundColor: '#0F6FC4',
     margin: 10,
-    padding: 10
+    padding: 10,
+    width:250
   },
   buttonLabel: {
     fontSize: 20
   },
   tittle: {
-    fontSize: 50,
-    color: 'black'
+    fontSize: 35,
+    color: 'white',
+    textAlign: 'center'
   },
 
 });

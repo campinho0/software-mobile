@@ -2,13 +2,13 @@ import React, {useReducer} from 'react'
 import firebase from '../../firebaseDB'
 import FirebaseContext from './firebaseContext'
 import FirebaseReducer from './firebaseReducer'
-import { OBTENER_VEHICULOS_EXITO } from '../../types'
+import { GET_VEHICLE_SUCCESSFULLY } from '../../types'
 import _ from 'lodash'
 
 const FirebaseState = props =>{
 
     const initialState={
-        menu:[]
+        catalog:[]
         
     }
 
@@ -28,7 +28,7 @@ const FirebaseState = props =>{
                 })
                 vehiculos = _.sortBy(vehiculos, 'marcaScrollView')
                 dispatch({
-                    type: OBTENER_VEHICULOS_EXITO,
+                    type: GET_VEHICLE_SUCCESSFULLY,
                     payload: vehiculos
                 })
             }
@@ -36,9 +36,9 @@ const FirebaseState = props =>{
     return (
         <FirebaseContext.Provider   
             value={{
-                menu: state.menu,
-                firebase
-                
+                catalog: state.catalog,
+                firebase,
+                obtenerVehiculos 
             }}
         >
             {props.children}
