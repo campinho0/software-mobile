@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native'
-import React from 'react'
+import React, { useState } from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Appointment from './src/components/Appointment';
 import Confirmation from './src/components/Confirmation';
@@ -12,6 +12,7 @@ import OffersPromotions from './src/components/OffersPromotions';
 import QuotationRequest from './src/components/QuotationRequest';
 import ServiceAppointment from './src/components/ServiceAppointment';
 import ServiceHistory from './src/components/ServiceHistory';
+import VehicleDetail from './src/components/VehicleDetail';
 
 import FirebaseState from './context/firebase/firebaseState';
 import CatalogState from './context/catalog/catalogState';
@@ -33,6 +34,7 @@ function app() {
               <Drawer.Screen name="Quotation Request" component={QuotationRequest} />
               <Drawer.Screen name="Service Appointment" component={ServiceAppointment} />
               <Drawer.Screen name="Service History" component={ServiceHistory} />   
+              <Drawer.Screen name="Vehicle Detail" component={VehicleDetail} />  
             </Drawer.Navigator>
           </NavigationContainer>
         </CatalogState>

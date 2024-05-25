@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { Button } from 'react-native-paper';
 
 const SearchVehicles = ({ onSearch }) => {
   const [priceInput, setPriceInput] = useState(0);
@@ -17,7 +18,7 @@ const SearchVehicles = ({ onSearch }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Search Vehicles</Text>
+      <Text style={styles.title}>Buscar vehiculos</Text>
       <TextInput
         onChangeText={(value) => setBrandInput(value)}
         value={brandInput}
@@ -37,7 +38,13 @@ const SearchVehicles = ({ onSearch }) => {
         placeholder="Precio"
         keyboardType="numeric"
       />
-      <Button title="Search" onPress={searchVehicles} />
+      <Button
+              style={styles.button}
+              labelStyle={styles.buttonLabel}
+              mode='contained'
+              onPress={searchVehicles}>
+              Buscar
+            </Button>
     </View>
   );
 };
@@ -45,6 +52,8 @@ const SearchVehicles = ({ onSearch }) => {
 const styles = StyleSheet.create({
   container: {
     margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   title: {
     fontSize: 20,
@@ -63,7 +72,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: '#C8CFD8',
   },
-  
+  button: {
+    borderRadius: 50,
+    backgroundColor: '#0F6FC4',
+    margin: 10,
+    padding: 10,
+    width:250
+  },
+  buttonLabel: {
+    fontSize: 20
+  },
 });
 
 export default SearchVehicles;

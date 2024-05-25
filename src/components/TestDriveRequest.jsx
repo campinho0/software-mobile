@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, TextInput, StyleSheet, ScrollView } from 'react-native';
+import { Button } from 'react-native-paper';
+
 
 const TestDriveRequest = () => {
   const [name, setName] = useState('');
@@ -15,60 +17,86 @@ const TestDriveRequest = () => {
   };
 
   return (
-        <View style={styles.container}>
-        <Text style={styles.title}>Test Drive Request</Text>
+    <ScrollView>
+      <View style={styles.scrollView}>
+        <Text style={styles.title}>Solicitud de Test drive</Text>
         <TextInput
-            style={styles.input}
-            placeholder="Names and Last names"
-            value={name}
-            onChangeText={text => setName(text)}
+          style={styles.input}
+          placeholder="Nombre completo"
+          value={name}
+          onChangeText={text => setName(text)}
         />
         <TextInput
-            style={styles.input}
-            placeholder="Number id"
-            value={idNumber}
-            onChangeText={text => setIdNumber(text)}
-            keyboardType="numeric"
+          style={styles.input}
+          placeholder="Numero de identificacion"
+          value={idNumber}
+          onChangeText={text => setIdNumber(text)}
+          keyboardType="numeric"
         />
         <TextInput
-            style={styles.input}
-            placeholder="Telephone Number"
-            value={phoneNumber}
-            onChangeText={text => setPhoneNumber(text)}
-            keyboardType="phone-pad"
+          style={styles.input}
+          placeholder="Numero de telefono"
+          value={phoneNumber}
+          onChangeText={text => setPhoneNumber(text)}
+          keyboardType="phone-pad"
         />
         <TextInput
-            style={styles.input}
-            placeholder="Date(YYYY-MM-DD)"
-            value={date}
-            onChangeText={text => setDate(text)}
+          style={styles.input}
+          placeholder="Fecha(YYYY-MM-DD)"
+          value={date}
+          onChangeText={text => setDate(text)}
         />
-        <Button title="Test Drive" onPress={handleSubmit} props
-        dark={{height:80, justifyContent:'center'}}/>
-
-        </View>
+        <Button
+              style={styles.button}
+              labelStyle={styles.buttonLabel}
+              mode='contained'
+              onPress={handleSubmit}>
+              Programa un test drive
+            </Button>
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#fff',
-    paddingHorizontal: 20,
-    paddingVertical: 40,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    color:'black'
   },
   input: {
     height: 40,
+    width: 300,
     borderColor: 'gray',
+    color: 'black',
     borderWidth: 1,
     borderRadius: 5,
-    marginBottom: 20,
+    marginBottom: 10,
     paddingHorizontal: 10,
+    backgroundColor: '#C8CFD8',
+  },
+  scrollView: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    borderRadius: 50,
+    backgroundColor: '#0F6FC4',
+    margin: 10,
+    padding: 10,
+    width:250
+  },
+  buttonLabel: {
+    fontSize: 20
   },
 });
 
